@@ -1,0 +1,24 @@
+{
+  "name": "aula_sist_dist_04042022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LarissaSampaio/AULA_SIST_DIST_04042022.git"
+  },
+  "author": "Larissa Sampaio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LarissaSampaio/AULA_SIST_DIST_04042022/issues"
+  },
+  "homepage": "https://github.com/LarissaSampaio/AULA_SIST_DIST_04042022#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "config": "^3.3.7",
+    "express": "^4.17.3"
+  }
+}
