@@ -1,6 +1,7 @@
-const config = require("config")
-const express = require("express")
-const bodyParser = require("body-parser")
+//const config = require("config") igual a linha de baixo (mais usado)
+import config from "config"
+import express from "express"
+import bodyParser from "body-parser"
 
 let port = config.get("server.port")
 
@@ -8,7 +9,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-const bandRoute = require("./routes/bandas")
+import bandRoute from "./routes/bandas.js"
 bandRoute(app, config)
 
 app.listen(port, function(){

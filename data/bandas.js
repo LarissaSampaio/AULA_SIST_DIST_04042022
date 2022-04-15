@@ -1,4 +1,4 @@
-{
+const data = {
     "bandas":{
         "data": {
             "BAN-01": {
@@ -19,3 +19,5 @@
         }
     }
 }
+
+export default data;
