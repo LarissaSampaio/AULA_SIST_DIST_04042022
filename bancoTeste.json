@@ -19,6 +19,11 @@
       "id": "BAN-04",
       "name": "Criolo",
       "style": "Rap"
+    },
+    "BAN-05": {
+      "id": "BAN-05",
+      "name": "Caetano Veloso",
+      "style": "MPB"
     }
   }
 }
