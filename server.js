@@ -1,12 +1,13 @@
 //const config = require("config") igual a linha de baixo (mais usado)
 import config from "config"
 import express from "express"
-import bodyParser from "body-parser"
+import cors from "cors"
 
 let port = config.get("server.port")
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 
 import bandRoute from "./routes/bandas.js"

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API BANDAS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1 class="text-2xl bg-red-50 my-10 mx-5">
+            Teste API - CRUD
+        </h1>
+
+        <button @click="reqGET" class="border rounded bg-gray-50 p-1 mx-1">Listar bandas</button>
+        <button @click="reqPOST" class="border rounded bg-gray-50 p-1 mx-1">Incluir bandas</button>
+        <button @click="reqPUT" class="border rounded bg-gray-50 p-1 mx-1">Alterar bandas</button>
+        <button @click="reqDELETE" class="border rounded bg-gray-50 p-1 mx-1">Deletar bandas</button>
+
+        <div class="grid grid-cols-3 justify-start px-2">
+            <div class="border rounded px-2 my-2 bg-gray-100">
+                Resposta do Servidor: 
+                <div class="border rounded px-2 my-2 bg-white">
+                    {{message}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data(){
+                return{
+                    message: " "
+                }
+            },
+            methods:{
+                reqGET(){
+                    let self = this; 
+                    this.message = "GET";
+                    axios.get('http://localhost:3000/api/v1/bandas')
+                    .then(function(response){
+                        self.message = JSON.stringify(response.data)
+                    })
+                    .catch(function(error){
+                        console.log(error)
+                    })
+                },
+                reqPOST(){ 
+                    this.message = "POST";                    
+                },
+                reqPUT(){ 
+                    this.message = "PUT";                   
+                },
+                reqDELETE(){
+                    this.message = "DELETE";
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

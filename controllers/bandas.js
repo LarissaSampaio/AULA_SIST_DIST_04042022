@@ -1,4 +1,3 @@
-import bandasDB from "../data/bandas.js";
 import { Low, JSONFile } from 'lowdb'
 
 const adapter = new JSONFile("./bancoTeste.json")
